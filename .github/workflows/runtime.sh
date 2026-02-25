@@ -116,19 +116,19 @@
     # export DOTNET_ROOT=$(pwd)/.dotnet
     # export PATH=$DOTNET_ROOT:$PATH
 
-    ARCH_SUFFIX="linux-x64"
-    mkdir $DOTNET_DIR
-    pushd dotnet-sdk-$(uname -m)
-    URL="https://dotnetcli.azureedge.net/dotnet/Sdk/${SDK_VERSION}/dotnet-sdk-${SDK_VERSION}-${ARCH_SUFFIX}.tar.gz"
-    echo "Trying $URL"
-    wget -O "dotnet-sdk-${SDK_VERSION}-${ARCH_SUFFIX}.tar.gz" "$URL"
-    mkdir -p "$HOME/dotnet-sdk-${SDK_VERSION}"
-    tar -xf "dotnet-sdk-${SDK_VERSION}-${ARCH_SUFFIX}.tar.gz" -C "$HOME/dotnet-sdk-${SDK_VERSION}"
-    export DOTNET_ROOT="$HOME/dotnet-sdk-${SDK_VERSION}"
-    export PATH="$DOTNET_ROOT:$PATH"
-    dotnet --version
-    popd
-    cd "$(basename "$REPO" .git)"
+    # ARCH_SUFFIX="linux-x64"
+    # mkdir $DOTNET_DIR
+    # pushd dotnet-sdk-$(uname -m)
+    # URL="https://dotnetcli.azureedge.net/dotnet/Sdk/${SDK_VERSION}/dotnet-sdk-${SDK_VERSION}-${ARCH_SUFFIX}.tar.gz"
+    # echo "Trying $URL"
+    # wget -O "dotnet-sdk-${SDK_VERSION}-${ARCH_SUFFIX}.tar.gz" "$URL"
+    # mkdir -p "$HOME/dotnet-sdk-${SDK_VERSION}"
+    # tar -xf "dotnet-sdk-${SDK_VERSION}-${ARCH_SUFFIX}.tar.gz" -C "$HOME/dotnet-sdk-${SDK_VERSION}"
+    # export DOTNET_ROOT="$HOME/dotnet-sdk-${SDK_VERSION}"
+    # export PATH="$DOTNET_ROOT:$PATH"
+    # dotnet --version
+    # popd
+    # cd "$(basename "$REPO" .git)"
 
     sed -i '/<ItemGroup Condition="'"'"'$(TargetOS)'"'"' == '"'"'linux'"'"' and '"'"'$(TargetArchitecture)'"'"' == '"'"'ppc64le'"'"'">/{
     n
