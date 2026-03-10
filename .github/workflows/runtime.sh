@@ -160,9 +160,10 @@
     BUILD_DIR="$(pwd)"
     EXIT_CODE=256
     BUILD_EXIT_CODE=256
+    DOTNET_RUNTIME_ID=linux-x64
 
     common_args+=(/p:NoPgoOptimize=true --portablebuild "$PORTABLE_BUILD")
-    common_args+=(/p:DotNetBuildFromSource=true)
+    common_args+=(/p:DotNetBuildFromSource=true /p:UseRidGraph=true)
     common_args+=(--runtimeconfiguration Debug --librariesConfiguration "$CONFIGURATION")
     # common_args+=(/p:PrimaryRuntimeFlavor=Mono --warnAsError false --subset clr+mono+libs+host+packs+libs.tests)
     common_args+=(/p:UsingToolMicrosoftNetCompilers=false  /p:DotNetBuildSourceOnly=true /p:DotNetBuildTests=true --cmakeargs -DCLR_CMAKE_USE_SYSTEM_BROTLI=true --cmakeargs -DCLR_CMAKE_USE_SYSTEM_ZLIB=true)
