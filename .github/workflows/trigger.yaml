@@ -103,7 +103,7 @@ jobs:
         if: github.event.issue.pull_request && steps.script-check.outputs.found == 'true'
         uses: actions/github-script@v6
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.AGITHUB_TOKEN }}
           script: |
             const fs = require('fs');
             const body = fs.readFileSync('Script-details', 'utf8');
@@ -118,7 +118,7 @@ jobs:
         if: steps.check-status.outputs.status != 'success' || steps.script-check.outputs.found == 'false'
         uses: actions/github-script@v6
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.AGITHUB_TOKEN }}
           script: |
             const runId = process.env.GITHUB_RUN_ID;
             const repo = process.env.GITHUB_REPOSITORY;
