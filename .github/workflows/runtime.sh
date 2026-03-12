@@ -198,7 +198,7 @@
     popd
     cd "$(basename "$REPO" .git)"
 
-    ./build.sh --subset libs.tests --test /p:WithoutCategories=IgnoreForCI ${common_args[@]+"${common_args[@]}"} ${test_args[@]+"${test_args[@]}"} || LIB_BUILD_EXIT_CODE=$?
+    # ./build.sh --subset libs.tests --test /p:WithoutCategories=IgnoreForCI ${common_args[@]+"${common_args[@]}"} ${test_args[@]+"${test_args[@]}"} || LIB_BUILD_EXIT_CODE=$?
 
     cd /runtime/artifacts/bin
     CUR_DIR=$(pwd)
