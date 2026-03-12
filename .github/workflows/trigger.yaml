@@ -14,7 +14,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-
   ppc64le-trigger:
     runs-on: ubuntu-latest
     if: contains(github.event.comment.body, '@Dotnet-ppc64le build')
