@@ -237,7 +237,7 @@ jobs:
           '</head>' \
           '<body>' \
           '' \
-          '<h2>Report</h2>' \
+          '<h2>Runtime Report</h2>' \
           '' \
           '<table>' \
           '  <thead>' \
